@@ -54,8 +54,8 @@ function randomNumber(min, max) {
 
 function playGame() {
 
-    var field1 = randomNumber(20, 50);
-    var field2 = randomNumber(20, 50);
+    var field1 = randomNumber(10, 100);
+    var field2 = randomNumber(10, 100);
     var result = field1 + field2;
 
     var resultsArray = generateRandomOptions(result);
@@ -113,7 +113,7 @@ function checkAnswer(selectedElement) {
     console.log(riddle);
     console.log(selectedElement.innerHTML);
 
-    var after = document.getElementById('after')
+    var after = document.getElementById('after');
 
     if (selectedElement.innerHTML == riddle.answer) {
         //poprawna odpowiedź
@@ -126,6 +126,8 @@ function checkAnswer(selectedElement) {
         //wrong
         after.classList.remove('hide');
         after.classList.add('wrong');
+        after.classList.add('animated');
+        after.classList.add('zoomIn');
         after.innerHTML = "Ohhh no! Click the button to continue!";
 
     }
