@@ -45,7 +45,7 @@
 
         </div>
         <div class="play-again">
-            <a class="button">Play Again</a>
+            <a class="button" onclick="playAgain()">Play Again</a>
         </div>
     </div>
 </div>
@@ -134,6 +134,16 @@ function checkAnswer(selectedElement) {
 
     }
 }
+
+function playAgain() {
+    var after = document.getElementById('after');
+    after.classList.remove('wrong');
+    after.classList.remove('correct');
+    after.classList.add('hide');
+    playGame();
+
+}
+
 </script>
 
 </body>
