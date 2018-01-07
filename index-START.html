@@ -20,22 +20,22 @@
             What is the sum of <span class="text-info" id="field1">5</span> and <span class="text-info" id="field2">5</span>?
         </div>
         <div class="options">
-            <div class="fields">
+            <div class="fields animated zoomIn">
                 <div class="field-block" id="option1" onclick="checkAnswer(this)">
                     10
                 </div>
             </div>
-            <div class="fields">
+            <div class="fields animated zoomIn">
                 <div class="field-block" id="option2" onclick="checkAnswer(this)">
                     10
                 </div>
             </div>
-            <div class="fields">
+            <div class="fields animated zoomIn">
                 <div class="field-block" id="option3" onclick="checkAnswer(this)">
                     10
                 </div>
             </div>
-            <div class="fields">
+            <div class="fields animated zoomIn">
                 <div class="field-block" id="option4" onclick="checkAnswer(this)">
                     10
                 </div>
@@ -125,6 +125,8 @@ function checkAnswer(selectedElement) {
         //poprawna odpowiedź
         after.classList.remove('hide');
         after.classList.add('correct');
+        after.classList.add('animated');
+        after.classList.add('zoomIn');
         after.innerHTML = "Good Job! Click the button to continue!"
     } else {
         //wrong
