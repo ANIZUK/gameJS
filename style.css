@@ -1,26 +1,5 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 60px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 180px;
-  padding: 20px;
-  color: white;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+body {
+  font-family: "DejaVu Sans Mono";
 }
 
 .text-info {
@@ -101,7 +80,7 @@
   top: 5%;
   left: 5%;
   width: 90%;
-  height: 80%;
+  height: 75%;
   /*display: none;*/
   color: #FFF;
   text-align: center;
@@ -113,11 +92,11 @@
 }
 
 .correct {
-  background-color: green;
+  background-color: darkolivegreen;
 }
 
 .wrong {
-  background-color: #D91E18;
+  background-color: brown;
 }
 
 .hide {
