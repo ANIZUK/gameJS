@@ -17,7 +17,7 @@
 <div class="quiz">
     <div class="quiz-content">
         <div class="question">
-            What is the sum of <span class="text-info">5</span> and <span class="text-info">5</span>?
+            What is the sum of <span class="text-info" id="field1">5</span> and <span class="text-info" id="field2">5</span>?
         </div>
         <div class="options">
             <div class="fields">
@@ -51,14 +51,26 @@
 
 var riddle = {};
 
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max-min+1) + min);
+}
+
 function playGame() {
+
+    var field1 = randomNumber(20, 50);
+    var field2 = randomNumber(20, 50);
+
     riddle = {
-        field1: 5,
-        field2: 5,
+        field1: field1,
+        field2: field2,
         resultsArray: [8, 9, 10, 11],
         answer: 10
     };
-    console.log(riddle);
+
+    document.getElementById('field1').innerHTML = riddle.field1;
+    document.getElementById('field2').innerHTML = riddle.field2;
+
+    console.log(field1, field2);
 }
 
 
