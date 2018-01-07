@@ -21,25 +21,28 @@
         </div>
         <div class="options">
             <div class="fields">
-                <div class="field-block" id="option1">
+                <div class="field-block" id="option1" onclick="checkAnswer(this)">
                     10
                 </div>
             </div>
             <div class="fields">
-                <div class="field-block" id="option2">
+                <div class="field-block" id="option2" onclick="checkAnswer(this)">
                     10
                 </div>
             </div>
             <div class="fields">
-                <div class="field-block" id="option3">
+                <div class="field-block" id="option3" onclick="checkAnswer(this)">
                     10
                 </div>
             </div>
             <div class="fields">
-                <div class="field-block" id="option4">
+                <div class="field-block" id="option4" onclick="checkAnswer(this)">
                     10
                 </div>
             </div>
+        </div>
+        <div class="after hide">
+
         </div>
         <div class="play-again">
             <a class="button">Play Again</a>
@@ -57,18 +60,19 @@ function randomNumber(min, max) {
 
 function playGame() {
 
-    var field1 = 5; //randomNumber(20, 50);
-    var field2 = 5; //randomNumber(20, 50);
+    var field1 = randomNumber(20, 50);
+    var field2 = randomNumber(20, 50);
     var result = field1 + field2;
 
     var resultsArray = generateRandomOptions(result);
     resultsArray.push(result);
+    resultsArray.sort(function(a, b) { return 0.5 - Math.random() });
 
     riddle = {
         field1: field1,
         field2: field2,
-        resultsArray: [8, 9, 10, 11],
-        answer: 10
+        resultsArray: resultsArray,
+        answer: result
     };
 
     document.getElementById('field1').innerHTML = riddle.field1;
@@ -78,7 +82,6 @@ function playGame() {
     document.getElementById('option3').innerHTML = riddle.resultsArray[2];
     document.getElementById('option4').innerHTML = riddle.resultsArray[3];
 
-    console.log(field1, field2);
 }
 
 function generateRandomOptions(sum) {
@@ -100,21 +103,28 @@ function generateRandomOptions(sum) {
         var result = sum;
 
         if (addSubtract === 1) {
-            //dodawanie random numbers do rezultatu
+            //dodaj random number do rezultatu
             result += randomNumberArray[i];
         } else {
-            //odejmowanie random numbers od rezultatu
+            //odejmij
             result -= randomNumberArray[i];
         }
         resultsArray.push(result);
     }
-
-    console.log(resultsArray);
-
+   
     return resultsArray;
 }
 
-	
+function checkAnswer(selectedElement) {
+    console.log(riddle);
+    console.log(selectedElement.innerHTML);
+
+    if (selectedElement.innerHTML == riddle.answer) {
+        //poprawna odpowiedź
+    } else {
+        //wrong answer
+    }
+}
 </script>
 
 </body>
