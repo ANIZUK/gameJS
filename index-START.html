@@ -57,8 +57,12 @@ function randomNumber(min, max) {
 
 function playGame() {
 
-    var field1 = randomNumber(20, 50);
-    var field2 = randomNumber(20, 50);
+    var field1 = 5; //randomNumber(20, 50);
+    var field2 = 5; //randomNumber(20, 50);
+    var result = field1 + field2;
+
+    var resultsArray = generateRandomOptions(result);
+    resultsArray.push(result);
 
     riddle = {
         field1: field1,
@@ -69,10 +73,46 @@ function playGame() {
 
     document.getElementById('field1').innerHTML = riddle.field1;
     document.getElementById('field2').innerHTML = riddle.field2;
+    document.getElementById('option1').innerHTML = riddle.resultsArray[0];
+    document.getElementById('option2').innerHTML = riddle.resultsArray[1];
+    document.getElementById('option3').innerHTML = riddle.resultsArray[2];
+    document.getElementById('option4').innerHTML = riddle.resultsArray[3];
 
     console.log(field1, field2);
 }
 
+function generateRandomOptions(sum) {
+    var resultsArray = [];
+    var randomNumberArray = [];
+
+    while(randomNumberArray.length < 3) {
+        var random = randomNumber(1, 10);
+
+        if (randomNumberArray.indexOf(random) > -1)
+            continue;
+        randomNumberArray.push(random);
+    }
+
+    // console.log(randomNumberArray, addSubtract);
+
+    for (var i = 0; i < 3; i++) { //3, bo potrzebujemy 3 przypadkowych liczb i jednej poprawnej odpowiedzi
+        var addSubtract = randomNumber(0,1);
+        var result = sum;
+
+        if (addSubtract === 1) {
+            //dodawanie random numbers do rezultatu
+            result += randomNumberArray[i];
+        } else {
+            //odejmowanie random numbers od rezultatu
+            result -= randomNumberArray[i];
+        }
+        resultsArray.push(result);
+    }
+
+    console.log(resultsArray);
+
+    return resultsArray;
+}
 
 	
 </script>
