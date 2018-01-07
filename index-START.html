@@ -121,14 +121,14 @@ function checkAnswer(selectedElement) {
         after.classList.add('correct');
         after.classList.add('animated');
         after.classList.add('zoomIn');
-        after.innerHTML = "Good Job! Click the button to continue!"
+        after.innerHTML = "Good answer! Click the button to continue!"
     } else {
         //wrong
         after.classList.remove('hide');
         after.classList.add('wrong');
         after.classList.add('animated');
         after.classList.add('zoomIn');
-        after.innerHTML = "Ohhh no! Click the button to continue!";
+        after.innerHTML = "Wrong answer! Click the button to continue!";
 
     }
 }
