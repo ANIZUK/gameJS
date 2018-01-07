@@ -41,7 +41,7 @@
                 </div>
             </div>
         </div>
-        <div class="after hide">
+        <div class="after hide" id="after">
 
         </div>
         <div class="play-again">
@@ -119,10 +119,19 @@ function checkAnswer(selectedElement) {
     console.log(riddle);
     console.log(selectedElement.innerHTML);
 
+    var after = document.getElementById('after')
+
     if (selectedElement.innerHTML == riddle.answer) {
         //poprawna odpowiedź
+        after.classList.remove('hide');
+        after.classList.add('correct');
+        after.innerHTML = "Good Job! Click the button to continue!"
     } else {
-        //wrong answer
+        //wrong
+        after.classList.remove('hide');
+        after.classList.add('wrong');
+        after.innerHTML = "Ohhh no! Click the button to continue!";
+
     }
 }
 </script>
