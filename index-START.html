@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   </head>
-<body>
+<body onload="playGame()">
 
 <div>
 	<h1>Adding Game</h1>
@@ -14,10 +14,54 @@
 	<p id="demo">In this lecture, we will cover the game to add 2 numbers.</p>
 </div>
 <hr>
+<div class="quiz">
+    <div class="quiz-content">
+        <div class="question">
+            What is the sum of <span class="text-info">5</span> and <span class="text-info">5</span>?
+        </div>
+        <div class="options">
+            <div class="fields">
+                <div class="field-block" id="option1">
+                    10
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field-block" id="option2">
+                    10
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field-block" id="option3">
+                    10
+                </div>
+            </div>
+            <div class="fields">
+                <div class="field-block" id="option4">
+                    10
+                </div>
+            </div>
+        </div>
+        <div class="play-again">
+            <a class="button">Play Again</a>
+        </div>
+    </div>
+</div>
 
 <script>
 
-//let's write our script here!
+var riddle = {};
+
+function playGame() {
+    riddle = {
+        field1: 5,
+        field2: 5,
+        resultsArray: [8, 9, 10, 11],
+        answer: 10
+    };
+    console.log(riddle);
+}
+
+
 	
 </script>
 

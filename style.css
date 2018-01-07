@@ -62,7 +62,7 @@
   align-items: center;
   /*flex: 1 0 auto;*/
   border-radius: 4px;
-  background-color: #f9bad0;
+  background-color: lightcoral;
   font-size: 6rem;
   color: #fff;
   cursor: pointer;
@@ -71,7 +71,7 @@
 .quiz {
   color: #ddd;
   margin: 2%;
-  background-color: #ec1561;
+  background-color: indianred;
   padding: 2%;
   width: 90%;
   position: relative;
@@ -87,7 +87,7 @@
   align-items: center;
   flex: 0 0 auto;
   border-radius: 4px;
-  background-color: #2fcaaa;
+  background-color: cadetblue;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .05), 0 2px 12px 0 rgba(0, 0, 0, .1);
   transition: box-shadow 200ms ease-out;
   color: #fff;
